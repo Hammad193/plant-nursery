@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore the Green Haven Nursery gallery featuring indoor plants, gardens, office greenery, plant styling and beautiful natural spaces.">
+    <meta name="keywords" content="plant nursery gallery, indoor plants, garden ideas, office plants, plant styling, Green Haven Nursery">
+    <meta name="author" content="Green Haven Nursery">
+
+    <title>Plant Gallery | Green Haven Nursery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <div class="announcement-bar">
+        <div class="container announcement-inner">
+            <p><i class="bi bi-truck"></i> Free plant delivery on selected orders</p>
+            <a href="shop.html">Shop Plants <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <header class="site-header" id="siteHeader">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-icon"><i class="bi bi-flower1"></i></span>
+                <span class="brand-text">
+                    <strong>Green Haven</strong>
+                    <small>Plant Nursery</small>
+                </span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="index.html" class="__HOME__">Home</a>
+                <a href="about.html" class="">About</a>
+                <a href="shop.html" class="">Shop</a>
+                <a href="services.html" class="">Services</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="contact.html" class="">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="header-icon-btn" type="button" id="headerSearchBtn" aria-label="Search">
+                    <i class="bi bi-search"></i>
+                </button>
+                <a href="shop.html#wishlist" class="header-icon-btn" id="headerWishlistBtn" aria-label="Wishlist">
+                    <i class="bi bi-heart"></i>
+                    <span class="header-count wishlist-count" id="wishlistCount">0</span>
+                </a>
+                <a href="cart.html#cart" class="header-icon-btn cart-header-btn" id="cartOpenBtn" aria-label="Shopping Cart">
+                    <i class="bi bi-bag"></i>
+                    <span class="header-count cart-count" id="cartCount">0</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+            <div class="mobile-nav-inner">
+                <div class="mobile-nav-header">
+                    <span>Menu</span>
+                    <button id="mobileMenuClose" type="button" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
+                </div>
+                <nav aria-label="Mobile navigation">
+                    <a href="index.html" class="__HOME__"><span><i class="bi bi-house"></i> Home</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="about.html" class=""><span><i class="bi bi-info-circle"></i> About</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="shop.html" class=""><span><i class="bi bi-shop"></i> Shop</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="services.html" class=""><span><i class="bi bi-flower1"></i> Services</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="gallery.html" class="active"><span><i class="bi bi-images"></i> Gallery</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="contact.html" class=""><span><i class="bi bi-envelope"></i> Contact</span><i class="bi bi-chevron-right"></i></a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+<!-- =========================
+         GALLERY HERO
+    ========================== -->
+
+    <section class="gallery-page-hero">
+
+        <div class="gallery-hero-overlay"></div>
+
+        <div class="container gallery-hero-content">
+
+            <span class="section-label gallery-light-label">
+                Green Spaces & Inspiration
+            </span>
+
+            <h1>
+                A Little More
+                <span>Green Inspiration</span>
+            </h1>
+
+            <p>
+                Explore beautiful plants, garden ideas and carefully
+                designed green spaces from the world of Green Haven Nursery.
+            </p>
+
+            <div class="gallery-hero-buttons">
+
+                <a
+                    href="#gallery-grid"
+                    class="btn btn-primary">
+
+                    Explore Gallery
+                    <i class="bi bi-images"></i>
+
+                </a>
+
+                <a
+                    href="shop.html"
+                    class="btn btn-light">
+
+                    Shop Plants
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY INTRO
+    ========================== -->
+
+    <section class="section-padding gallery-intro-section">
+
+        <div class="container">
+
+            <div class="gallery-intro">
+
+                <div>
+
+                    <span class="section-label">
+                        Our Green World
+                    </span>
+
+                    <h2 class="section-title">
+                        Plants That Bring
+                        <span>Spaces To Life</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="gallery-intro-text">
+
+                    <p>
+                        From peaceful indoor corners to vibrant outdoor
+                        gardens, every green space has its own personality.
+                        Browse our gallery for ideas and inspiration.
+                    </p>
+
+                    <a
+                        href="contact.html"
+                        class="text-link">
+
+                        Create Your Green Space
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY FILTERS
+    ========================== -->
+
+    <section class="gallery-main-section" id="gallery-grid">
+
+        <div class="container">
+
+            <div class="gallery-filter-bar">
+
+                <button
+                    class="gallery-filter active"
+                    data-filter="all"
+                    type="button">
+
+                    All
+
+                </button>
+
+                <button
+                    class="gallery-filter"
+                    data-filter="indoor"
+                    type="button">
+
+                    Indoor Plants
+
+                </button>
+
+                <button
+                    class="gallery-filter"
+                    data-filter="outdoor"
+                    type="button">
+
+                    Gardens
+
+                </button>
+
+                <button
+                    class="gallery-filter"
+                    data-filter="office"
+                    type="button">
+
+                    Office Greenery
+
+                </button>
+
+                <button
+                    class="gallery-filter"
+                    data-filter="styling"
+                    type="button">
+
+                    Plant Styling
+
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 GALLERY GRID
+            ========================== -->
+
+            <div class="gallery-masonry">
+
+
+                <!-- ITEM 01 -->
+
+                <article
+                    class="gallery-item gallery-item-tall"
+                    data-category="indoor">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View indoor plant collection">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=1000&q=85"
+                            alt="Beautiful indoor plant collection"
+                            loading="lazy"
+                            data-gallery-image="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=1800&q=90"
+                        >
+
+                        <span class="gallery-hover">
+
+                            <i class="bi bi-arrows-fullscreen"></i>
+
+                        </span>
+
+                    </button>
+
+                    <div class="gallery-caption">
+
+                        <span>Indoor Plants</span>
+
+                        <h3>Natural Corners</h3>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ITEM 02 -->
+
+                <article
+                    class="gallery-item"
+                    data-category="outdoor">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View garden plants">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1000&q=85"
+                            alt="Green garden plants and landscaping"
+                            loading="lazy"
+                            data-gallery-image="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1800&q=90"
+                        >
+
+                        <span class="gallery-hover">
+                            <i class="bi bi-arrows-fullscreen"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="gallery-caption">
+
+                        <span>Gardens</span>
+
+                        <h3>Fresh Outdoor Living</h3>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ITEM 03 -->
+
+                <article
+                    class="gallery-item"
+                    data-category="office">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View office plants">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85"
+                            alt="Indoor office plants and greenery"
+                            loading="lazy"
+                            data-gallery-image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=90"
+                        >
+
+                        <span class="gallery-hover">
+                            <i class="bi bi-arrows-fullscreen"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="gallery-caption">
+
+                        <span>Office Greenery</span>
+
+                        <h3>Workspaces With Life</h3>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ITEM 04 -->
+
+                <article
+                    class="gallery-item gallery-item-wide"
+                    data-category="styling">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View styled plant space">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=1200&q=85"
+                            alt="Modern plant styling for a living space"
+                            loading="lazy"
+                            data-gallery-image="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=1800&q=90"
+                        >
+
+                        <span class="gallery-hover">
+                            <i class="bi bi-arrows-fullscreen"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="gallery-caption">
+
+                        <span>Plant Styling</span>
+
+                        <h3>Styled With Nature</h3>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ITEM 05 -->
+
+                <article
+                    class="gallery-item"
+                    data-category="indoor">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View house plants">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=85"
+                            alt="Green house plants in a bright room"
+                            loading="lazy"
+                            data-gallery-image="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1800&q=90"
+                        >
+
+                        <span class="gallery-hover">
+                            <i class="bi bi-arrows-fullscreen"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="gallery-caption">
+
+                        <span>Indoor Plants</span>
+
+                        <h3>Bright Green Living</h3>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ITEM 06 -->
+
+                <article
+                    class="gallery-item"
+                    data-category="outdoor">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View outdoor garden">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=1000&q=85"
+                            alt="Lush outdoor garden with green plants"
+                            loading="lazy"
+                            data-gallery-image="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=1800&q=90"
+                        >
+
+                        <span class="gallery-hover">
+                            <i class="bi bi-arrows-fullscreen"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="gallery-caption">
+
+                        <span>Gardens</span>
+
+                        <h3>Green Outdoor Retreat</h3>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ITEM 07 -->
+
+                <article
+                    class="gallery-item gallery-item-tall"
+                    data-category="styling">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View decorative plant arrangement">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1000&q=85"
+                            alt="Decorative green plant arrangement"
+                            loading="lazy"
+                            data-gallery-image="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1800&q=90"
+                        >
+
+                        <span class="gallery-hover">
+                            <i class="bi bi-arrows-fullscreen"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="gallery-caption">
+
+                        <span>Plant Styling</span>
+
+                        <h3>Simple Botanical Beauty</h3>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ITEM 08 -->
+
+                <article
+                    class="gallery-item"
+                    data-category="office">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View office greenery">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=85"
+                            alt="Office interior decorated with plants"
+                            loading="lazy"
+                            data-gallery-image="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=90"
+                        >
+
+                        <span class="gallery-hover">
+                            <i class="bi bi-arrows-fullscreen"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="gallery-caption">
+
+                        <span>Office Greenery</span>
+
+                        <h3>A Fresher Workspace</h3>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ITEM 09 -->
+
+                <article
+                    class="gallery-item gallery-item-wide"
+                    data-category="outdoor">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View landscaped garden">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=85"
+                            alt="Beautiful landscaped garden with lush greenery"
+                            loading="lazy"
+                            data-gallery-image="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1800&q=90"
+                        >
+
+                        <span class="gallery-hover">
+                            <i class="bi bi-arrows-fullscreen"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="gallery-caption">
+
+                        <span>Gardens</span>
+
+                        <h3>Nature In Every Corner</h3>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ITEM 10 -->
+
+                <article
+                    class="gallery-item"
+                    data-category="indoor">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View indoor tropical plant">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1000&q=85"
+                            alt="Tropical indoor plant decoration"
+                            loading="lazy"
+                            data-gallery-image="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1800&q=90"
+                        >
+
+                        <span class="gallery-hover">
+                            <i class="bi bi-arrows-fullscreen"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="gallery-caption">
+
+                        <span>Indoor Plants</span>
+
+                        <h3>Tropical Touch</h3>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ITEM 11 -->
+
+                <article
+                    class="gallery-item"
+                    data-category="styling">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View plant decor">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1530968464165-7a1861cbaf9f?auto=format&fit=crop&w=1000&q=85"
+                            alt="Plants used as natural home decoration"
+                            loading="lazy"
+                            data-gallery-image="https://images.unsplash.com/photo-1530968464165-7a1861cbaf9f?auto=format&fit=crop&w=1800&q=90"
+                        >
+
+                        <span class="gallery-hover">
+                            <i class="bi bi-arrows-fullscreen"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="gallery-caption">
+
+                        <span>Plant Styling</span>
+
+                        <h3>Natural Home Details</h3>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ITEM 12 -->
+
+                <article
+                    class="gallery-item"
+                    data-category="office">
+
+                    <button
+                        class="gallery-image-button"
+                        type="button"
+                        aria-label="View workplace greenery">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1000&q=85"
+                            alt="Modern workspace with indoor greenery"
+                            loading="lazy"
+                            data-gallery-image="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1800&q=90"
+                        >
+
+                        <span class="gallery-hover">
+                            <i class="bi bi-arrows-fullscreen"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="gallery-caption">
+
+                        <span>Office Greenery</span>
+
+                        <h3>Work Surrounded By Green</h3>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY CTA
+    ========================== -->
+
+    <section class="gallery-final-cta">
+
+        <div class="container">
+
+            <div class="gallery-cta-inner">
+
+                <div>
+
+                    <span class="section-label">
+                        Your Space, Your Style
+                    </span>
+
+                    <h2>
+                        Ready To Add More
+                        <span>Green To Your Life?</span>
+                    </h2>
+
+                </div>
+
+                <a
+                    href="contact.html"
+                    class="btn btn-primary">
+
+                    Let's Plan Your Space
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LIGHTBOX
+    ========================== -->
+
+    <div
+        class="gallery-lightbox"
+        id="galleryLightbox"
+        aria-hidden="true">
+
+        <button
+            class="lightbox-close"
+            id="lightboxClose"
+            type="button"
+            aria-label="Close image">
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+
+        <button
+            class="lightbox-prev"
+            id="lightboxPrev"
+            type="button"
+            aria-label="Previous image">
+
+            <i class="bi bi-chevron-left"></i>
+
+        </button>
+
+
+        <div class="lightbox-content">
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt="Gallery preview"
+            >
+
+            <div class="lightbox-caption">
+
+                <span id="lightboxCategory"></span>
+
+                <h3 id="lightboxTitle"></h3>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="lightbox-next"
+            id="lightboxNext"
+            type="button"
+            aria-label="Next image">
+
+            <i class="bi bi-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand footer-logo">
+                        <span class="brand-icon"><i class="bi bi-flower1"></i></span>
+                        <span class="brand-text">
+                            <strong>Green Haven</strong>
+                            <small>Plant Nursery</small>
+                        </span>
+                    </a>
+                    <p>Beautiful plants, thoughtful gardening and greener spaces for everyday living.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="shop.html">Shop Plants</a>
+                    <a href="services.html">Services</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Plant Services</h3>
+                    <a href="services.html#our-services">Indoor Plant Styling</a>
+                    <a href="services.html#our-services">Office Plant Setup</a>
+                    <a href="services.html#our-services">Plant Repotting</a>
+                    <a href="services.html#our-services">Garden Maintenance</a>
+                    <a href="services.html#our-services">Plant Consultation</a>
+                    <a href="services.html#our-services">Plant Care Plans</a>
+                </div>
+
+                <div class="footer-column footer-contact">
+                    <h3>Visit Us</h3>
+                    <p><i class="bi bi-geo-alt"></i> 24 Green Street, Garden District</p>
+                    <p><i class="bi bi-telephone"></i> +1 234 567 890</p>
+                    <p><i class="bi bi-envelope"></i> hello@greenhavennursery.com</p>
+                    <p><i class="bi bi-clock"></i> Mon to Sat: 8:00 AM to 7:00 PM</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Green Haven Nursery. All rights reserved.</p>
+                <div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+            </div>
+        </div>
+    </footer>
+<div class="toast-message" id="toastMessage" aria-live="polite"><i class="bi bi-check-circle-fill"></i><span>Added successfully</span></div>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

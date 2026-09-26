@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Green Haven Order Details</title><link rel="stylesheet" href="admin.css"></head><body data-auth-required="true"><aside class="sidebar"><div class="brand">Green Haven Nursery<small>Admin Panel</small></div><nav class="nav"><a href="index.html">Dashboard</a><a href="products.html">Products</a><a href="product-form.html">Add Product</a><a href="orders.html">Orders</a></nav><button class="btn btn-danger" style="margin:24px 12px 0" onclick="ghLogout()">Logout</button></aside><main class="main">
+<div class="topbar"><h1>Order Details</h1><a class="btn btn-secondary" href="orders.html">Back to Orders</a></div><div id="content"></div>
+</main><script src="seed.js"></script><script src="admin.js"></script><script>
+const content = document.getElementById("content");
+const orderId = new URLSearchParams(location.search).get("id");
+
+function renderOrder() {
+    const order = ghFindOrder(orderId);
+
+    if (!order) {
+        content.innerHTML = '<div class="card">Order not found.</div>';
+        return;
+    }
+
+    const customer = order.customer || {};
+    const items = Array.isArray(order.items) ? order.items : [];
+
+    content.innerHTML = `
+        <div class="card">
+            <div class="toolbar">
+                <div><strong>${ghEsc(order.orderNumber)}</strong><div class="muted">${new Date(order.createdAt).toLocaleString()}</div></div>
+                <select class="select" id="status" style="max-width:220px">
+                    ${["New","Confirmed","Processing","Out for Delivery","Delivered","Cancelled"].map(value => `<option value="${value}">${value}</option>`).join("")}
+                </select>
+                <button class="btn btn-primary" type="button" id="saveStatus">Save Status</button>
+            </div>
+            <div class="form-grid">
+                <div class="card"><h3>Customer</h3><p><strong>${ghEsc(customer.name)}</strong><br>${ghEsc(customer.phone)}<br>${ghEsc(customer.email)}<br>${ghEsc(customer.city)}<br>${ghEsc(customer.address)}</p></div>
+                <div class="card"><h3>Payment & Total</h3><p>Payment: <strong>${ghEsc(order.payment || order.paymentMethod || "Cash on Delivery")}</strong><br>Subtotal: ${ghMoney(order.subtotal)}<br>Delivery: ${ghMoney(order.delivery)}<br>Total: <strong>${ghMoney(order.total)}</strong></p></div>
+                <div class="card full"><h3>Products</h3><div class="order-items">${items.map(item => `<div class="order-item"><span>${ghEsc(item.name)} × ${Number(item.quantity) || 0}</span><strong>${ghMoney(Number(item.price) * (Number(item.quantity) || 0))}</strong></div>`).join("") || '<div class="muted">No products recorded.</div>'}</div></div>
+            </div>
+        </div>`;
+
+    document.getElementById("status").value = order.status || "New";
+    document.getElementById("saveStatus").addEventListener("click", () => {
+        const status = document.getElementById("status").value;
+        if (!ghUpdateOrderStatus(order.orderNumber, status)) {
+            alert("Order status could not be saved.");
+            return;
+        }
+        renderOrder();
+        alert("Order status saved.");
+    });
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    if (await ghAdminReady()) {
+        renderOrder();
+    }
+});
+
+window.addEventListener("greenHavenOrdersUpdated", renderOrder);
+window.addEventListener("storage", event => {
+    if (event.key === GH_ADMIN_KEYS.orders) {
+        renderOrder();
+    }
+});
+</script></body></html>

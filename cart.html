@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Shopping Cart | Green Haven Nursery</title>
+
+    <meta
+        name="description"
+        content="Review plants and planters in your Green Haven Nursery shopping cart, update quantities and continue to secure checkout with ease."
+    >
+
+    <meta name="theme-color" content="#1f5d42">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+
+    <!-- =========================
+         ANNOUNCEMENT BAR
+    ========================== -->
+
+    <div class="announcement-bar">
+
+        <div class="container announcement-inner">
+
+            <p>
+                <i class="bi bi-truck"></i>
+                Free plant delivery on selected orders
+            </p>
+
+            <a href="shop.html">
+                Shop Plants
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <div class="container header-inner">
+
+            <a href="index.html" class="brand">
+
+                <span class="brand-icon">
+                    <i class="bi bi-flower1"></i>
+                </span>
+
+                <span class="brand-text">
+
+                    <strong>
+                        Green Haven
+                    </strong>
+
+                    <small>
+                        Plant Nursery
+                    </small>
+
+                </span>
+
+            </a>
+
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="gallery.html">
+                    Gallery
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="header-icon-btn"
+                    type="button"
+                    id="headerSearchBtn"
+                    aria-label="Search"
+                >
+                    <i class="bi bi-search"></i>
+                </button>
+
+
+                <a
+                    href="shop.html#wishlist"
+                    class="header-icon-btn"
+                    id="headerWishlistBtn"
+                    aria-label="Wishlist"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                    <span
+                        class="header-count wishlist-count"
+                        id="wishlistCount"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="cart.html"
+                    class="header-icon-btn cart-header-btn"
+                    id="cartOpenBtn"
+                    aria-label="Shopping Cart"
+                    aria-current="page"
+                >
+
+                    <i class="bi bi-bag"></i>
+
+                    <span
+                        class="header-count cart-count"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+
+                    <i class="bi bi-list"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOBILE NAV -->
+
+        <div
+            class="mobile-nav"
+            id="mobileNav"
+            aria-hidden="true"
+        >
+
+            <div class="mobile-nav-inner">
+
+                <div class="mobile-nav-header">
+
+                    <span>
+                        Menu
+                    </span>
+
+                    <button
+                        id="mobileMenuClose"
+                        type="button"
+                        aria-label="Close menu"
+                    >
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+
+                </div>
+
+
+                <nav aria-label="Mobile navigation">
+
+                    <a href="index.html">
+
+                        <span>
+                            <i class="bi bi-house"></i>
+                            Home
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </a>
+
+
+                    <a href="about.html">
+
+                        <span>
+                            <i class="bi bi-info-circle"></i>
+                            About
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </a>
+
+
+                    <a href="shop.html">
+
+                        <span>
+                            <i class="bi bi-shop"></i>
+                            Shop
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </a>
+
+
+                    <a href="services.html">
+
+                        <span>
+                            <i class="bi bi-flower1"></i>
+                            Services
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </a>
+
+
+                    <a href="gallery.html">
+
+                        <span>
+                            <i class="bi bi-images"></i>
+                            Gallery
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </a>
+
+
+                    <a href="contact.html">
+
+                        <span>
+                            <i class="bi bi-envelope"></i>
+                            Contact
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CART HERO
+    ========================== -->
+
+    <section class="cart-page-hero">
+
+        <div class="cart-page-hero-overlay"></div>
+
+        <div class="container cart-page-hero-content">
+
+            <span class="section-label light-label">
+                Your Plant Selection
+            </span>
+
+            <h1>
+                Shopping Cart
+            </h1>
+
+            <p>
+                Review your selected plants, adjust quantities and continue
+                when your garden collection is ready.
+            </p>
+
+
+            <div class="breadcrumb">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <span>
+                    Cart
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CART CONTENT
+    ========================== -->
+
+    <main class="cart-page-section section-padding">
+
+        <div class="container">
+
+
+            <!-- EMPTY CART -->
+
+            <div
+                class="cart-page-empty"
+                id="cartPageEmpty"
+                hidden
+            >
+
+                <div class="cart-page-empty-icon">
+
+                    <i class="bi bi-bag-heart"></i>
+
+                </div>
+
+                <span class="section-label">
+                    Nothing Here Yet
+                </span>
+
+                <h2>
+                    Your Cart Is Waiting For Greenery
+                </h2>
+
+                <p>
+                    Browse our plant collection and add your favorite plants
+                    or planters to begin your order.
+                </p>
+
+                <a
+                    href="shop.html"
+                    class="btn btn-primary"
+                >
+
+                    Explore Plants
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- CART LAYOUT -->
+
+            <div
+                class="cart-page-layout"
+                id="cartPageContent"
+            >
+
+
+                <!-- CART PRODUCTS -->
+
+                <section class="cart-page-products">
+
+                    <div class="cart-page-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                Selected Items
+                            </span>
+
+                            <h2>
+                                Your Plant Collection
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="cart-item-count"
+                            id="cartItemCount"
+                        >
+                            0 items
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="cart-page-list"
+                        id="cartPageItems"
+                    ></div>
+
+
+                    <div class="cart-page-actions">
+
+                        <a
+                            href="shop.html"
+                            class="btn btn-light"
+                        >
+
+                            <i class="bi bi-arrow-left"></i>
+
+                            Continue Shopping
+
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="cart-clear-btn"
+                            id="clearCartBtn"
+                        >
+
+                            <i class="bi bi-trash3"></i>
+
+                            Clear Cart
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- CART SUMMARY -->
+
+                <aside class="cart-page-summary">
+
+                    <div class="cart-summary-card">
+
+                        <span class="section-label">
+                            Order Summary
+                        </span>
+
+                        <h2>
+                            Cart Total
+                        </h2>
+
+
+                        <div class="cart-summary-details">
+
+                            <div>
+
+                                <span>
+                                    Items
+                                </span>
+
+                                <strong id="cartSummaryItems">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Subtotal
+                                </span>
+
+                                <strong id="cartPageSubtotal">
+                                    $0.00
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Delivery
+                                </span>
+
+                                <strong id="cartPageDelivery">
+                                    $0.00
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="cart-summary-total">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <strong id="cartPageTotal">
+                                $0.00
+                            </strong>
+
+                        </div>
+
+
+                        <p class="cart-summary-note">
+
+                            <i class="bi bi-info-circle"></i>
+
+                            Delivery is calculated at the current checkout rate.
+
+                        </p>
+
+
+                        <a
+                            href="checkout.html"
+                            class="btn btn-primary cart-page-checkout"
+                            id="cartPageCheckout"
+                        >
+
+                            Proceed To Checkout
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="shop.html"
+                            class="cart-summary-shop-link"
+                        >
+
+                            <i class="bi bi-shop"></i>
+
+                            Add More Plants
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- CART BENEFITS -->
+
+                    <div class="cart-benefit-list">
+
+
+                        <div>
+
+                            <span>
+                                <i class="bi bi-flower2"></i>
+                            </span>
+
+                            <p>
+
+                                <strong>
+                                    Fresh Plant Selection
+                                </strong>
+
+                                Carefully selected plants for your space.
+
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                <i class="bi bi-box-seam"></i>
+                            </span>
+
+                            <p>
+
+                                <strong>
+                                    Careful Packing
+                                </strong>
+
+                                Orders are prepared with plant safety in mind.
+
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                <i class="bi bi-headset"></i>
+                            </span>
+
+                            <p>
+
+                                <strong>
+                                    Helpful Support
+                                </strong>
+
+                                Get guidance when you need help choosing.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-top">
+
+
+                <div class="footer-brand">
+
+                    <a
+                        href="index.html"
+                        class="brand footer-logo"
+                    >
+
+                        <span class="brand-icon">
+
+                            <i class="bi bi-flower1"></i>
+
+                        </span>
+
+                        <span class="brand-text">
+
+                            <strong>
+                                Green Haven
+                            </strong>
+
+                            <small>
+                                Plant Nursery
+                            </small>
+
+                        </span>
+
+                    </a>
+
+
+                    <p>
+                        Beautiful plants, thoughtful gardening and greener
+                        spaces for everyday living.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="#" aria-label="Pinterest">
+                            <i class="bi bi-pinterest"></i>
+                        </a>
+
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="about.html">
+                        About Us
+                    </a>
+
+                    <a href="shop.html">
+                        Shop Plants
+                    </a>
+
+                    <a href="services.html">
+                        Services
+                    </a>
+
+                    <a href="gallery.html">
+                        Gallery
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Plant Services
+                    </h3>
+
+                    <a href="services.html#our-services">
+                        Indoor Plant Styling
+                    </a>
+
+                    <a href="services.html#our-services">
+                        Office Plant Setup
+                    </a>
+
+                    <a href="services.html#our-services">
+                        Plant Repotting
+                    </a>
+
+                    <a href="services.html#our-services">
+                        Garden Maintenance
+                    </a>
+
+                    <a href="services.html#our-services">
+                        Plant Consultation
+                    </a>
+
+                    <a href="services.html#our-services">
+                        Plant Care Plans
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column footer-contact">
+
+                    <h3>
+                        Visit Us
+                    </h3>
+
+                    <p>
+                        <i class="bi bi-geo-alt"></i>
+                        24 Green Street, Garden District
+                    </p>
+
+                    <p>
+                        <i class="bi bi-telephone"></i>
+                        +1 234 567 890
+                    </p>
+
+                    <p>
+                        <i class="bi bi-envelope"></i>
+                        hello@greenhavennursery.com
+                    </p>
+
+                    <p>
+                        <i class="bi bi-clock"></i>
+                        Mon to Sat: 8:00 AM to 7:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Green Haven Nursery. All rights reserved.
+                </p>
+
+                <div>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms of Service
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- TOAST -->
+
+    <div
+        class="toast-message"
+        id="toastMessage"
+        aria-live="polite"
+    >
+
+        <i class="bi bi-check-circle-fill"></i>
+
+        <span>
+            Added successfully
+        </span>
+
+    </div>
+
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

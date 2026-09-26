@@ -1,0 +1,5 @@
+/* Green Haven inventory states */
+.product-stock { display:block; margin-top:4px; font-size:12px; font-weight:700; }
+.product-stock.in-stock { color:#2f7d32; }
+.product-stock.sold-out { color:#b42318; }
+.add-cart-btn.disabled, .add-cart-btn:disabled { opacity:.5; cursor:not-allowed; pointer-events:none; }

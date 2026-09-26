@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shop Plants Online | Green Haven Nursery</title>
+    <meta name="description" content="Shop beautiful indoor plants, outdoor plants, succulents, flowering plants and stylish planters from Green Haven Nursery.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="announcement-bar">
+        <div class="container announcement-inner">
+            <p><i class="bi bi-truck"></i> Free plant delivery on selected orders</p>
+            <a href="shop.html">Shop Plants <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <header class="site-header" id="siteHeader">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-icon"><i class="bi bi-flower1"></i></span>
+                <span class="brand-text">
+                    <strong>Green Haven</strong>
+                    <small>Plant Nursery</small>
+                </span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="index.html" class="__HOME__">Home</a>
+                <a href="about.html" class="">About</a>
+                <a href="shop.html" class="active">Shop</a>
+                <a href="services.html" class="">Services</a>
+                <a href="gallery.html" class="">Gallery</a>
+                <a href="contact.html" class="">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="header-icon-btn" type="button" id="headerSearchBtn" aria-label="Search">
+                    <i class="bi bi-search"></i>
+                </button>
+                <a href="shop.html#wishlist" class="header-icon-btn" id="headerWishlistBtn" aria-label="Wishlist">
+                    <i class="bi bi-heart"></i>
+                    <span class="header-count wishlist-count" id="wishlistCount">0</span>
+                </a>
+                <a href="cart.html#cart" class="header-icon-btn cart-header-btn" id="cartOpenBtn" aria-label="Shopping Cart">
+                    <i class="bi bi-bag"></i>
+                    <span class="header-count cart-count" id="cartCount">0</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+            <div class="mobile-nav-inner">
+                <div class="mobile-nav-header">
+                    <span>Menu</span>
+                    <button id="mobileMenuClose" type="button" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
+                </div>
+                <nav aria-label="Mobile navigation">
+                    <a href="index.html" class="__HOME__"><span><i class="bi bi-house"></i> Home</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="about.html" class=""><span><i class="bi bi-info-circle"></i> About</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="shop.html" class="active"><span><i class="bi bi-shop"></i> Shop</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="services.html" class=""><span><i class="bi bi-flower1"></i> Services</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="gallery.html" class=""><span><i class="bi bi-images"></i> Gallery</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="contact.html" class=""><span><i class="bi bi-envelope"></i> Contact</span><i class="bi bi-chevron-right"></i></a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+<!-- ================= PAGE HERO ================= -->
+    <section class="shop-page-hero">
+
+        <div class="shop-hero-overlay"></div>
+
+        <div class="container shop-hero-content">
+
+            <span class="section-label light-label">
+                Our Plant Collection
+            </span>
+
+            <h1>Bring More Green Into Your Space</h1>
+
+            <p>
+                Discover beautiful plants, natural greenery and stylish planters
+                selected to make your home and garden feel fresh.
+            </p>
+
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="bi bi-chevron-right"></i>
+                <span>Shop</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SHOP SECTION ================= -->
+    <main class="shop-section section-padding">
+
+        <div class="container">
+
+            <!-- SHOP TOOLBAR -->
+            <div class="shop-toolbar">
+
+                <div class="shop-search">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="search"
+                        id="productSearch"
+                        placeholder="Search plants, pots and planters..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="shop-sort">
+
+                    <label for="sortProducts">
+                        <i class="bi bi-filter"></i>
+                        Sort
+                    </label>
+
+                    <select id="sortProducts">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price Low to High</option>
+                        <option value="price-high">Price High to Low</option>
+                        <option value="name-az">Name A to Z</option>
+                        <option value="name-za">Name Z to A</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORY FILTER -->
+            <div class="shop-categories" id="categoryFilters">
+
+                <button
+                    class="category-filter active"
+                    data-category="all">
+                    All Plants
+                </button>
+
+                <button
+                    class="category-filter"
+                    data-category="indoor">
+                    Indoor Plants
+                </button>
+
+                <button
+                    class="category-filter"
+                    data-category="outdoor">
+                    Outdoor Plants
+                </button>
+
+                <button
+                    class="category-filter"
+                    data-category="succulent">
+                    Succulents
+                </button>
+
+                <button
+                    class="category-filter"
+                    data-category="flowering">
+                    Flowering Plants
+                </button>
+
+                <button
+                    class="category-filter"
+                    data-category="planter">
+                    Pots & Planters
+                </button>
+
+            </div>
+
+
+            <!-- RESULT INFORMATION -->
+            <div class="shop-result-row">
+
+                <p id="productResultText">
+                    Showing <strong>12</strong> products
+                </p>
+
+                <button class="clear-shop-filter" id="clearFilters">
+                    <i class="bi bi-arrow-counterclockwise"></i>
+                    Clear Filters
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT GRID -->
+            <div class="product-grid" id="productGrid">
+                <!-- Products loaded by JavaScript -->
+            </div>
+
+
+            <!-- EMPTY RESULT -->
+            <div class="shop-empty" id="shopEmpty">
+
+                <div class="empty-icon">
+                    <i class="bi bi-search"></i>
+                </div>
+
+                <h3>No plants found</h3>
+
+                <p>
+                    Try another search term or choose a different category.
+                </p>
+
+                <button class="btn btn-primary" id="emptyResetBtn">
+                    View All Plants
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= SHOP CTA ================= -->
+    <section class="shop-bottom-cta">
+
+        <div class="shop-cta-overlay"></div>
+
+        <div class="container shop-cta-content">
+
+            <div>
+                <span class="section-label light-label">
+                    Need Help Choosing?
+                </span>
+
+                <h2>Let Us Find the Right Plant for You</h2>
+
+                <p>
+                    Tell us about your space, light conditions and style.
+                    Our plant team can help you choose the right greenery.
+                </p>
+            </div>
+
+            <a href="contact.html" class="btn btn-light">
+                Talk to Our Team
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CART OVERLAY ================= -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+
+    <!-- ================= CART DRAWER ================= -->
+    <aside class="cart-drawer" id="cartDrawer">
+
+        <div class="cart-header">
+
+            <div>
+                <span class="cart-small-title">Your Selection</span>
+                <h3>Shopping Cart</h3>
+            </div>
+
+            <button class="cart-close" id="cartCloseBtn" aria-label="Close cart">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </div>
+
+
+        <div class="cart-items" id="cartItems">
+            <!-- Cart products loaded by JavaScript -->
+        </div>
+
+
+        <div class="cart-empty" id="cartEmpty">
+
+            <div class="cart-empty-icon">
+                <i class="bi bi-bag"></i>
+            </div>
+
+            <h4>Your cart is empty</h4>
+
+            <p>
+                Add some beautiful plants and bring nature home.
+            </p>
+
+            <button class="btn btn-primary" id="continueShoppingBtn">
+                Continue Shopping
+            </button>
+
+        </div>
+
+
+        <div class="cart-footer" id="cartFooter">
+
+            <div class="cart-summary-line">
+                <span>Subtotal</span>
+                <strong id="cartSubtotal">$0.00</strong>
+            </div>
+
+            <p class="cart-note">
+                Delivery charges are calculated at checkout.
+            </p>
+
+            <a href="cart.html" class="btn btn-outline-primary cart-view-btn">
+                View Cart
+                <i class="bi bi-bag-check"></i>
+            </a>
+
+            <button class="btn btn-primary cart-checkout-btn" id="checkoutBtn">
+                Proceed to Checkout
+                <i class="bi bi-arrow-right"></i>
+            </button>
+
+            <button class="continue-shopping" id="continueShoppingBottom">
+                Continue Shopping
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= QUICK VIEW MODAL ================= -->
+    <div class="quick-view-overlay" id="quickViewOverlay">
+
+        <div class="quick-view-modal">
+
+            <button class="quick-view-close" id="quickViewClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <div id="quickViewContent">
+                <!-- Quick view loaded by JavaScript -->
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand footer-logo">
+                        <span class="brand-icon"><i class="bi bi-flower1"></i></span>
+                        <span class="brand-text">
+                            <strong>Green Haven</strong>
+                            <small>Plant Nursery</small>
+                        </span>
+                    </a>
+                    <p>Beautiful plants, thoughtful gardening and greener spaces for everyday living.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="shop.html">Shop Plants</a>
+                    <a href="services.html">Services</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Plant Services</h3>
+                    <a href="services.html#our-services">Indoor Plant Styling</a>
+                    <a href="services.html#our-services">Office Plant Setup</a>
+                    <a href="services.html#our-services">Plant Repotting</a>
+                    <a href="services.html#our-services">Garden Maintenance</a>
+                    <a href="services.html#our-services">Plant Consultation</a>
+                    <a href="services.html#our-services">Plant Care Plans</a>
+                </div>
+
+                <div class="footer-column footer-contact">
+                    <h3>Visit Us</h3>
+                    <p><i class="bi bi-geo-alt"></i> 24 Green Street, Garden District</p>
+                    <p><i class="bi bi-telephone"></i> +1 234 567 890</p>
+                    <p><i class="bi bi-envelope"></i> hello@greenhavennursery.com</p>
+                    <p><i class="bi bi-clock"></i> Mon to Sat: 8:00 AM to 7:00 PM</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Green Haven Nursery. All rights reserved.</p>
+                <div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+            </div>
+        </div>
+    </footer>
+<div class="toast-message" id="toastMessage" aria-live="polite"><i class="bi bi-check-circle-fill"></i><span>Added successfully</span></div>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

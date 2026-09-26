@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Green Haven Nursery</title>
+
+    <meta name="description"
+        content="Complete your Green Haven Nursery plant order with easy checkout, delivery details, payment selection and automatic order summary.">
+
+    <meta name="theme-color" content="#1f5d42">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ANNOUNCEMENT BAR
+    ========================== -->
+
+    <div class="announcement-bar">
+        <div class="container announcement-inner">
+
+            <p>
+                <i class="bi bi-truck"></i>
+                Free plant delivery on selected orders
+            </p>
+
+            <a href="shop.html">
+                Shop Plants
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <div class="container header-inner">
+
+            <a href="index.html" class="brand">
+
+                <span class="brand-icon">
+                    <i class="bi bi-flower1"></i>
+                </span>
+
+                <span class="brand-text">
+                    <strong>Green Haven</strong>
+                    <small>Plant Nursery</small>
+                </span>
+
+            </a>
+
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+
+                <a href="index.html">Home</a>
+
+                <a href="about.html">About</a>
+
+                <a href="shop.html">Shop</a>
+
+                <a href="services.html">Services</a>
+
+                <a href="gallery.html">Gallery</a>
+
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="header-icon-btn"
+                    type="button"
+                    id="headerSearchBtn"
+                    aria-label="Search">
+
+                    <i class="bi bi-search"></i>
+
+                </button>
+
+
+                <a
+                    href="shop.html#wishlist"
+                    class="header-icon-btn"
+                    id="headerWishlistBtn"
+                    aria-label="Wishlist">
+
+                    <i class="bi bi-heart"></i>
+
+                    <span
+                        class="header-count wishlist-count"
+                        id="wishlistCount">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="cart.html"
+                    class="header-icon-btn cart-header-btn"
+                    id="cartOpenBtn"
+                    aria-label="Shopping Cart">
+
+                    <i class="bi bi-bag"></i>
+
+                    <span
+                        class="header-count cart-count"
+                        id="cartCount">
+                        0
+                    </span>
+
+                </a>
+
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false">
+
+                    <i class="bi bi-list"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOBILE NAV -->
+
+        <div
+            class="mobile-nav"
+            id="mobileNav"
+            aria-hidden="true">
+
+            <div class="mobile-nav-inner">
+
+                <div class="mobile-nav-header">
+
+                    <span>Menu</span>
+
+                    <button
+                        id="mobileMenuClose"
+                        type="button"
+                        aria-label="Close menu">
+
+                        <i class="bi bi-x-lg"></i>
+
+                    </button>
+
+                </div>
+
+
+                <nav aria-label="Mobile navigation">
+
+                    <a href="index.html">
+
+                        <span>
+                            <i class="bi bi-house"></i>
+                            Home
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </a>
+
+
+                    <a href="about.html">
+
+                        <span>
+                            <i class="bi bi-info-circle"></i>
+                            About
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </a>
+
+
+                    <a href="shop.html">
+
+                        <span>
+                            <i class="bi bi-shop"></i>
+                            Shop
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </a>
+
+
+                    <a href="services.html">
+
+                        <span>
+                            <i class="bi bi-flower1"></i>
+                            Services
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </a>
+
+
+                    <a href="gallery.html">
+
+                        <span>
+                            <i class="bi bi-images"></i>
+                            Gallery
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </a>
+
+
+                    <a href="contact.html">
+
+                        <span>
+                            <i class="bi bi-envelope"></i>
+                            Contact
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CHECKOUT HERO
+    ========================== -->
+
+    <section class="checkout-page-hero">
+
+        <div class="checkout-hero-overlay"></div>
+
+        <div class="container checkout-hero-content">
+
+            <span class="section-label light-label">
+                Secure Order Checkout
+            </span>
+
+            <h1>
+                Complete Your Plant Order
+            </h1>
+
+            <p>
+                Enter your delivery details, choose a payment method
+                and review your plants before placing your order.
+            </p>
+
+
+            <div class="breadcrumb">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <span>
+                    Checkout
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHECKOUT CONTENT
+    ========================== -->
+
+    <main class="checkout-section section-padding">
+
+        <div class="container">
+
+
+            <!-- EMPTY CART -->
+
+            <div
+                class="checkout-empty"
+                id="checkoutEmpty"
+                hidden>
+
+                <div class="checkout-empty-icon">
+
+                    <i class="bi bi-bag-x"></i>
+
+                </div>
+
+                <h2>
+                    Your Cart Is Empty
+                </h2>
+
+                <p>
+                    Add some beautiful plants to your cart before
+                    continuing to checkout.
+                </p>
+
+                <a
+                    href="shop.html"
+                    class="btn btn-primary">
+
+                    Browse Plants
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- CHECKOUT FORM -->
+
+            <form
+                class="checkout-form"
+                id="checkoutForm"
+                novalidate>
+
+                <div class="checkout-grid">
+
+
+                    <!-- =========================
+                         LEFT SIDE
+                    ========================== -->
+
+                    <div class="checkout-main">
+
+
+                        <!-- CUSTOMER DETAILS -->
+
+                        <div class="checkout-card">
+
+                            <div class="checkout-card-heading">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        Delivery Details
+                                    </span>
+
+                                    <h2>
+                                        Where Should We Deliver?
+                                    </h2>
+
+                                </div>
+
+                                <span class="checkout-step">
+                                    01
+                                </span>
+
+                            </div>
+
+
+                            <div class="checkout-form-grid">
+
+
+                                <!-- NAME -->
+
+                                <div class="form-group">
+
+                                    <label for="checkoutName">
+                                        Full Name
+                                        <span>*</span>
+                                    </label>
+
+                                    <div class="checkout-input-wrapper">
+
+                                        <i class="bi bi-person"></i>
+
+                                        <input
+                                            type="text"
+                                            id="checkoutName"
+                                            name="name"
+                                            placeholder="Enter your full name"
+                                            autocomplete="name"
+                                            required>
+
+                                    </div>
+
+                                    <small
+                                        class="checkout-error"
+                                        data-error-for="checkoutName">
+                                    </small>
+
+                                </div>
+
+
+                                <!-- EMAIL -->
+
+                                <div class="form-group">
+
+                                    <label for="checkoutEmail">
+                                        Email Address
+                                        <span>*</span>
+                                    </label>
+
+                                    <div class="checkout-input-wrapper">
+
+                                        <i class="bi bi-envelope"></i>
+
+                                        <input
+                                            type="email"
+                                            id="checkoutEmail"
+                                            name="email"
+                                            placeholder="you@example.com"
+                                            autocomplete="email"
+                                            required>
+
+                                    </div>
+
+                                    <small
+                                        class="checkout-error"
+                                        data-error-for="checkoutEmail">
+                                    </small>
+
+                                </div>
+
+
+                                <!-- PHONE -->
+
+                                <div class="form-group">
+
+                                    <label for="checkoutPhone">
+                                        Phone Number
+                                        <span>*</span>
+                                    </label>
+
+                                    <div class="checkout-input-wrapper">
+
+                                        <i class="bi bi-telephone"></i>
+
+                                        <input
+                                            type="tel"
+                                            id="checkoutPhone"
+                                            name="phone"
+                                            placeholder="Enter your phone number"
+                                            autocomplete="tel"
+                                            required>
+
+                                    </div>
+
+                                    <small
+                                        class="checkout-error"
+                                        data-error-for="checkoutPhone">
+                                    </small>
+
+                                </div>
+
+
+                                <!-- CITY -->
+
+                                <div class="form-group">
+
+                                    <label for="checkoutCity">
+                                        City
+                                        <span>*</span>
+                                    </label>
+
+                                    <div class="checkout-input-wrapper">
+
+                                        <i class="bi bi-buildings"></i>
+
+                                        <input
+                                            type="text"
+                                            id="checkoutCity"
+                                            name="city"
+                                            placeholder="Enter your city"
+                                            autocomplete="address-level2"
+                                            required>
+
+                                    </div>
+
+                                    <small
+                                        class="checkout-error"
+                                        data-error-for="checkoutCity">
+                                    </small>
+
+                                </div>
+
+
+                                <!-- ADDRESS -->
+
+                                <div class="form-group checkout-full-width">
+
+                                    <label for="checkoutAddress">
+                                        Delivery Address
+                                        <span>*</span>
+                                    </label>
+
+                                    <div class="checkout-input-wrapper checkout-textarea-wrapper">
+
+                                        <i class="bi bi-geo-alt"></i>
+
+                                        <textarea
+                                            id="checkoutAddress"
+                                            name="address"
+                                            rows="3"
+                                            placeholder="House number, street, area and other delivery details"
+                                            autocomplete="street-address"
+                                            required></textarea>
+
+                                    </div>
+
+                                    <small
+                                        class="checkout-error"
+                                        data-error-for="checkoutAddress">
+                                    </small>
+
+                                </div>
+
+
+                                <!-- OPTIONAL NOTE -->
+
+                                <div class="form-group checkout-full-width">
+
+                                    <label for="checkoutNote">
+                                        Order Note
+                                        <small>
+                                            (Optional)
+                                        </small>
+                                    </label>
+
+                                    <div class="checkout-input-wrapper checkout-textarea-wrapper">
+
+                                        <i class="bi bi-chat-left-text"></i>
+
+                                        <textarea
+                                            id="checkoutNote"
+                                            name="note"
+                                            rows="3"
+                                            placeholder="Any special delivery instructions?"></textarea>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =========================
+                             PAYMENT
+                        ========================== -->
+
+                        <div class="checkout-card">
+
+                            <div class="checkout-card-heading">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        Payment
+                                    </span>
+
+                                    <h2>
+                                        Choose Your Payment Method
+                                    </h2>
+
+                                </div>
+
+                                <span class="checkout-step">
+                                    02
+                                </span>
+
+                            </div>
+
+
+                            <div class="payment-methods">
+
+
+                                <!-- CASH -->
+
+                                <label class="payment-option active">
+
+                                    <input
+                                        type="radio"
+                                        name="payment"
+                                        value="Cash on Delivery"
+                                        checked>
+
+                                    <span class="payment-option-content">
+
+                                        <span class="payment-icon">
+
+                                            <i class="bi bi-cash-stack"></i>
+
+                                        </span>
+
+                                        <span>
+
+                                            <strong>
+                                                Cash on Delivery
+                                            </strong>
+
+                                            <small>
+                                                Pay when your order arrives.
+                                            </small>
+
+                                        </span>
+
+                                    </span>
+
+                                    <span class="payment-check">
+
+                                        <i class="bi bi-check2"></i>
+
+                                    </span>
+
+                                </label>
+
+
+                                <!-- CARD -->
+
+                                <label class="payment-option">
+
+                                    <input
+                                        type="radio"
+                                        name="payment"
+                                        value="Card Payment">
+
+                                    <span class="payment-option-content">
+
+                                        <span class="payment-icon">
+
+                                            <i class="bi bi-credit-card"></i>
+
+                                        </span>
+
+                                        <span>
+
+                                            <strong>
+                                                Card Payment
+                                            </strong>
+
+                                            <small>
+                                                Payment gateway can be connected later.
+                                            </small>
+
+                                        </span>
+
+                                    </span>
+
+                                    <span class="payment-check">
+
+                                        <i class="bi bi-check2"></i>
+
+                                    </span>
+
+                                </label>
+
+
+                                <!-- BANK -->
+
+                                <label class="payment-option">
+
+                                    <input
+                                        type="radio"
+                                        name="payment"
+                                        value="Bank Transfer">
+
+                                    <span class="payment-option-content">
+
+                                        <span class="payment-icon">
+
+                                            <i class="bi bi-bank"></i>
+
+                                        </span>
+
+                                        <span>
+
+                                            <strong>
+                                                Bank Transfer
+                                            </strong>
+
+                                            <small>
+                                                Transfer details can be provided after ordering.
+                                            </small>
+
+                                        </span>
+
+                                    </span>
+
+                                    <span class="payment-check">
+
+                                        <i class="bi bi-check2"></i>
+
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkout-security-note">
+
+                                <i class="bi bi-shield-check"></i>
+
+                                <span>
+                                    Your order details are handled securely.
+                                    This checkout currently uses front end
+                                    order processing only.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         RIGHT SIDE
+                    ========================== -->
+
+                    <aside class="checkout-sidebar">
+
+                        <div class="checkout-summary-card">
+
+
+                            <div class="checkout-card-heading">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        Your Order
+                                    </span>
+
+                                    <h2>
+                                        Order Summary
+                                    </h2>
+
+                                </div>
+
+                                <span class="checkout-step">
+                                    03
+                                </span>
+
+                            </div>
+
+
+                            <!-- DYNAMIC PRODUCTS -->
+
+                            <div
+                                class="checkout-items"
+                                id="checkoutItems">
+                            </div>
+
+
+                            <!-- TOTALS -->
+
+                            <div class="checkout-summary-lines">
+
+                                <div>
+
+                                    <span>
+                                        Subtotal
+                                    </span>
+
+                                    <strong id="checkoutSubtotal">
+                                        $0.00
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        Delivery
+                                    </span>
+
+                                    <strong id="checkoutDelivery">
+                                        $0.00
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="checkout-total">
+
+                                    <span>
+                                        Total
+                                    </span>
+
+                                    <strong id="checkoutTotal">
+                                        $0.00
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary checkout-place-btn"
+                                id="placeOrderBtn">
+
+                                Place Order
+
+                                <i class="bi bi-check2-circle"></i>
+
+                            </button>
+
+
+                            <a
+                                href="cart.html"
+                                class="checkout-back-link">
+
+                                <i class="bi bi-arrow-left"></i>
+
+                                Back To Cart
+
+                            </a>
+
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </form>
+
+
+            <!-- =========================
+                 ORDER SUCCESS
+            ========================== -->
+
+            <section
+                class="checkout-success"
+                id="checkoutSuccess"
+                hidden>
+
+                <div class="checkout-success-icon">
+
+                    <i class="bi bi-check2"></i>
+
+                </div>
+
+
+                <span class="section-label">
+                    Order Confirmed
+                </span>
+
+
+                <h2>
+                    Thank You For Your Order
+                </h2>
+
+
+                <p>
+                    Your order has been created successfully.
+                    Keep the order number below for your records.
+                </p>
+
+
+                <div class="order-number-box">
+
+                    Order Number
+
+                    <strong id="orderNumber">
+                        GHN-000000
+                    </strong>
+
+                </div>
+
+
+                <div class="checkout-success-actions">
+
+                    <a
+                        href="shop.html"
+                        class="btn btn-primary">
+
+                        Continue Shopping
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+
+                    <a
+                        href="index.html"
+                        class="btn btn-light">
+
+                        Back To Home
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-top">
+
+
+                <!-- FOOTER BRAND -->
+
+                <div class="footer-brand">
+
+                    <a
+                        href="index.html"
+                        class="brand footer-logo">
+
+                        <span class="brand-icon">
+
+                            <i class="bi bi-flower1"></i>
+
+                        </span>
+
+                        <span class="brand-text">
+
+                            <strong>
+                                Green Haven
+                            </strong>
+
+                            <small>
+                                Plant Nursery
+                            </small>
+
+                        </span>
+
+                    </a>
+
+
+                    <p>
+                        Beautiful plants, thoughtful gardening
+                        and greener spaces for everyday living.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="#" aria-label="Pinterest">
+                            <i class="bi bi-pinterest"></i>
+                        </a>
+
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="about.html">
+                        About Us
+                    </a>
+
+                    <a href="shop.html">
+                        Shop Plants
+                    </a>
+
+                    <a href="services.html">
+                        Services
+                    </a>
+
+                    <a href="gallery.html">
+                        Gallery
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                </div>
+
+
+                <!-- SERVICES -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Plant Services
+                    </h3>
+
+                    <a href="services.html#our-services">
+                        Indoor Plant Styling
+                    </a>
+
+                    <a href="services.html#our-services">
+                        Office Plant Setup
+                    </a>
+
+                    <a href="services.html#our-services">
+                        Plant Repotting
+                    </a>
+
+                    <a href="services.html#our-services">
+                        Garden Maintenance
+                    </a>
+
+                    <a href="services.html#our-services">
+                        Plant Consultation
+                    </a>
+
+                    <a href="services.html#our-services">
+                        Plant Care Plans
+                    </a>
+
+                </div>
+
+
+                <!-- CONTACT -->
+
+                <div class="footer-column footer-contact">
+
+                    <h3>
+                        Visit Us
+                    </h3>
+
+                    <p>
+                        <i class="bi bi-geo-alt"></i>
+                        24 Green Street, Garden District
+                    </p>
+
+                    <p>
+                        <i class="bi bi-telephone"></i>
+                        +1 234 567 890
+                    </p>
+
+                    <p>
+                        <i class="bi bi-envelope"></i>
+                        hello@greenhavennursery.com
+                    </p>
+
+                    <p>
+                        <i class="bi bi-clock"></i>
+                        Mon to Sat: 8:00 AM to 7:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Green Haven Nursery.
+                    All rights reserved.
+                </p>
+
+                <div>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms of Service
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+
+    <div
+        class="toast-message"
+        id="toastMessage"
+        aria-live="polite">
+
+        <i class="bi bi-check-circle-fill"></i>
+
+        <span>
+            Added successfully
+        </span>
+
+    </div>
+
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

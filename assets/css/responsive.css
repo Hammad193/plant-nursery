@@ -1,0 +1,1 @@
+@media (max-width: 640px) { .site-header { align-items: flex-start; flex-direction: column; gap: .75rem; } .site-header nav { flex-wrap: wrap; } .hero, .page-content { padding: 4rem 1.25rem; } }

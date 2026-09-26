@@ -1,0 +1,130 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Green Haven Product</title><link rel="stylesheet" href="admin.css"></head><body data-auth-required="true"><aside class="sidebar"><div class="brand">Green Haven Nursery<small>Admin Panel</small></div><nav class="nav"><a href="index.html">Dashboard</a><a href="products.html">Products</a><a href="product-form.html">Add Product</a><a href="orders.html">Orders</a></nav><button class="btn btn-danger" style="margin:24px 12px 0" onclick="ghLogout()">Logout</button></aside><main class="main">
+<div class="topbar"><h1 id="heading">Add Product</h1><a class="btn btn-secondary" href="products.html">Back</a></div>
+<div class="card"><form id="form"><div class="form-grid">
+<div class="field"><label>Product Name</label><input class="input" id="name" required></div>
+<div class="field"><label>Category</label><select class="select" id="category"><option value="indoor">Indoor Plant</option><option value="flowering">Flowering Plant</option><option value="succulent">Succulent</option><option value="outdoor">Outdoor Plant</option><option value="planter">Pot & Planter</option></select></div>
+<div class="field"><label>Price</label><input class="input" id="price" type="number" min="0" step="0.01" required></div>
+<div class="field"><label>Old Price</label><input class="input" id="oldPrice" type="number" min="0" step="0.01"></div>
+<div class="field"><label>Stock Quantity</label><input class="input" id="stock" type="number" min="0" step="1" required></div>
+<div class="field"><label>Badge</label><input class="input" id="badge"></div>
+<div class="field full"><label>Image URL</label><input class="input" id="image" required></div>
+<div class="field full"><label>Description</label><textarea class="textarea" id="description" rows="5" required></textarea></div>
+</div><div class="form-actions"><button class="btn btn-primary" type="submit">Save Product</button><a class="btn btn-secondary" href="products.html">Cancel</a></div></form></div>
+</main><script src="seed.js"></script><script src="admin.js"></script><script>
+const params = new URLSearchParams(location.search);
+const editId = Number(params.get("id"));
+let existing = null;
+
+const categoryNames = {
+    indoor: "Indoor Plant",
+    flowering: "Flowering Plant",
+    succulent: "Succulent",
+    outdoor: "Outdoor Plant",
+    planter: "Pot & Planter"
+};
+
+const form = document.getElementById("form");
+const heading = document.getElementById("heading");
+const nameInput = document.getElementById("name");
+const categoryInput = document.getElementById("category");
+const priceInput = document.getElementById("price");
+const oldPriceInput = document.getElementById("oldPrice");
+const stockInput = document.getElementById("stock");
+const badgeInput = document.getElementById("badge");
+const imageInput = document.getElementById("image");
+const descriptionInput = document.getElementById("description");
+const saveButton = form.querySelector('button[type="submit"]');
+
+function createSlug(value) {
+    return String(value || "")
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+}
+
+async function initProductForm() {
+    const ready = await ghAdminReady();
+
+    if (!ready) {
+        return;
+    }
+
+    if (editId) {
+        existing = ghFindProduct(editId);
+
+        if (!existing) {
+            location.href = "products.html";
+            return;
+        }
+
+        heading.textContent = "Edit Product";
+        nameInput.value = existing.name ?? "";
+        categoryInput.value = existing.category ?? "indoor";
+        priceInput.value = existing.price ?? "";
+        oldPriceInput.value = existing.oldPrice ?? "";
+        stockInput.value = existing.stock ?? 0;
+        badgeInput.value = existing.badge ?? "";
+        imageInput.value = existing.image ?? "";
+        descriptionInput.value = existing.description ?? "";
+    }
+
+    saveButton.disabled = false;
+}
+
+saveButton.disabled = true;
+
+form.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    if (!(await ghAdminReady())) {
+        return;
+    }
+
+    const name = nameInput.value.trim();
+    const price = Number(priceInput.value);
+    const stock = Math.max(0, Math.floor(Number(stockInput.value) || 0));
+
+    if (!name || !Number.isFinite(price) || price < 0) {
+        alert("Please enter a valid product name and price.");
+        return;
+    }
+
+    const productData = {
+        name,
+        slug: createSlug(name),
+        category: categoryInput.value,
+        categoryName: categoryNames[categoryInput.value] || categoryInput.value,
+        price,
+        oldPrice: oldPriceInput.value ? Math.max(0, Number(oldPriceInput.value)) : null,
+        rating: existing?.rating ?? 5,
+        reviews: existing?.reviews ?? 0,
+        badge: badgeInput.value.trim(),
+        stock,
+        status: existing?.status || "active",
+        image: imageInput.value.trim(),
+        description: descriptionInput.value.trim()
+    };
+
+    let saved;
+
+    if (existing) {
+        saved = window.GreenHavenDataStore
+            ? window.GreenHavenDataStore.updateProduct(existing.id, productData)
+            : null;
+    } else {
+        saved = window.GreenHavenDataStore
+            ? window.GreenHavenDataStore.addProduct(productData)
+            : null;
+    }
+
+    if (!saved) {
+        alert("Product could not be saved. Please try again.");
+        return;
+    }
+
+    location.href = "products.html";
+});
+
+document.addEventListener("DOMContentLoaded", initProductForm);
+</script></body></html>

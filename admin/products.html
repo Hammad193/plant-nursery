@@ -1,0 +1,136 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Green Haven Products</title><link rel="stylesheet" href="admin.css"></head><body data-auth-required="true"><aside class="sidebar"><div class="brand">Green Haven Nursery<small>Admin Panel</small></div><nav class="nav"><a href="index.html">Dashboard</a><a href="products.html">Products</a><a href="product-form.html">Add Product</a><a href="orders.html">Orders</a></nav><button class="btn btn-danger" style="margin:24px 12px 0" onclick="ghLogout()">Logout</button></aside><main class="main">
+<div class="topbar"><h1>Products</h1><a class="btn btn-primary" href="product-form.html">+ Add Product</a></div>
+<div class="card"><div class="toolbar"><input class="input" id="search" placeholder="Search products..."><select class="select" id="filter" style="max-width:180px"><option value="all">All</option><option value="active">Active</option><option value="inactive">Inactive</option><option value="soldout">Sold Out</option></select></div>
+<div class="table-wrap"><table class="table"><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Website</th><th>Status</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div></div>
+</main><script src="seed.js"></script><script src="admin.js"></script><script>
+const search = document.getElementById("search");
+const filter = document.getElementById("filter");
+const rows = document.getElementById("rows");
+
+function render() {
+    let products = ghProducts();
+    const query = search.value.trim().toLowerCase();
+    const selectedFilter = filter.value;
+
+    products = products.filter(product => {
+        const matchesSearch = !query ||
+            String(product.name || "").toLowerCase().includes(query) ||
+            String(product.category || "").toLowerCase().includes(query) ||
+            String(product.categoryName || "").toLowerCase().includes(query);
+
+        const matchesFilter =
+            selectedFilter === "all" ||
+            (selectedFilter === "soldout" && Number(product.stock) === 0) ||
+            product.status === selectedFilter;
+
+        return matchesSearch && matchesFilter;
+    });
+
+    rows.innerHTML = products.map(product => `
+        <tr>
+            <td>
+                <img class="thumb" src="${ghEsc(product.image)}" alt="">
+                <strong>${ghEsc(product.name)}</strong>
+            </td>
+            <td>${ghEsc(product.categoryName || product.category)}</td>
+            <td>${ghMoney(product.price)}</td>
+            <td>
+                <div class="stock-control">
+                    <button class="btn btn-secondary stock-step" type="button" onclick="changeStock(${product.id}, -1)" aria-label="Decrease stock">−</button>
+                    <input class="stock-input" type="number" min="0" step="1" value="${Number(product.stock) || 0}" onchange="setStock(${product.id}, this.value)">
+                    <button class="btn btn-secondary stock-step" type="button" onclick="changeStock(${product.id}, 1)" aria-label="Increase stock">+</button>
+                </div>
+            </td>
+            <td>
+                <button
+                    class="btn ${product.status === "inactive" ? "btn-secondary" : "btn-primary"}"
+                    type="button"
+                    onclick="toggleProductStatus(${product.id})"
+                    aria-pressed="${product.status !== "inactive"}"
+                    title="${product.status === "inactive" ? "Turn product on for customers" : "Turn product off for customers"}"
+                >
+                    ${product.status === "inactive" ? "OFF" : "ON"}
+                </button>
+                <span class="status-label">${product.status === "inactive" ? "Hidden" : "Visible"}</span>
+            </td>
+            <td>${ghStatus(product.stock)}</td>
+            <td class="actions">
+                <a class="btn btn-secondary" href="product-form.html?id=${product.id}">Edit</a>
+                <button class="btn btn-danger" type="button" onclick="removeProduct(${product.id})">Delete</button>
+            </td>
+        </tr>
+    `).join("") || '<tr><td colspan="7" class="muted">No products found.</td></tr>';
+}
+
+function setStock(id, value) {
+    const nextStock = Math.max(0, Math.floor(Number(value) || 0));
+    const updated = ghUpdateProductStock(id, nextStock);
+
+    if (!updated) {
+        alert("Stock could not be updated.");
+        render();
+        return;
+    }
+
+    render();
+}
+
+function changeStock(id, amount) {
+    const product = ghFindProduct(id);
+
+    if (!product) {
+        return;
+    }
+
+    setStock(id, Number(product.stock) + Number(amount));
+}
+
+function toggleProductStatus(id) {
+    const product = ghFindProduct(id);
+
+    if (!product) {
+        return;
+    }
+
+    const nextStatus = product.status === "inactive" ? "active" : "inactive";
+    const updated = ghUpdateProductStatus(id, nextStatus);
+
+    if (!updated) {
+        alert("Product website status could not be updated.");
+        return;
+    }
+
+    render();
+}
+
+function removeProduct(id) {
+    const product = ghFindProduct(id);
+
+    if (!product || !confirm(`Delete ${product.name}?`)) {
+        return;
+    }
+
+    if (!ghDeleteProduct(id)) {
+        alert("Product could not be deleted.");
+        return;
+    }
+
+    render();
+}
+
+search.addEventListener("input", render);
+filter.addEventListener("change", render);
+
+document.addEventListener("DOMContentLoaded", async () => {
+    if (await ghAdminReady()) {
+        render();
+    }
+});
+
+window.addEventListener("greenHavenProductsUpdated", render);
+window.addEventListener("storage", event => {
+    if (event.key === GH_ADMIN_KEYS.products) {
+        render();
+    }
+});
+</script></body></html>
